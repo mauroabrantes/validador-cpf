@@ -6,6 +6,10 @@ while True:
     reverse = 10                    # Contador reverso
     total = 0
 
+    if not cpf.isdigit():
+        print('')
+        print('Você deve digitar apenas numeros!')
+        break
     # Loop do CPF
     for index in range(19):
         if index > 8:               # Primeiro indice que vai de 0 a 9
@@ -26,11 +30,16 @@ while True:
     sequence = new_cpf == str(new_cpf[0] * len(cpf))
     # Checagem final
     if cpf == new_cpf and not sequence:
+        print('')
         print('CPf validado com sucesso!')
     else:
+        print('')
         print('CPF não validado =(')
     
     # Opção de parar o loop infinito do CPF
+    print('')
     sair = input('Deseja sair? Digite "s" ou "n": ')
     if sair == 's':
+        print('')
+        print('Saindo...')
         break
